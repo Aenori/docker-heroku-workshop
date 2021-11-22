@@ -41,6 +41,12 @@ public class Main {
   @Value("${spring.datasource.url}")
   private String dbUrl;
 
+  @Value("${spring.datasource.username}")
+  private String dbUsername;
+
+  @Value("${spring.datasource.password}")
+  private String dbPassword;
+
   @Autowired
   private DataSource dataSource;
 
@@ -81,8 +87,8 @@ public class Main {
     } else {
       HikariConfig config = new HikariConfig();
       config.setJdbcUrl(dbUrl);
-      config.setUsername("postgres");
-      config.setPassword("postgres");
+      config.setUsername(dbUsername);
+      config.setPassword(dbPassword);
 
       return new HikariDataSource(config);
     }
