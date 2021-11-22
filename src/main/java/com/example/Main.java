@@ -81,6 +81,9 @@ public class Main {
     } else {
       HikariConfig config = new HikariConfig();
       config.setJdbcUrl(dbUrl);
+      config.setUsername("postgres");
+      config.setPassword("postgres");
+
       return new HikariDataSource(config);
     }
   }
