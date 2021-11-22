@@ -2,4 +2,4 @@ build:
   docker:
     web: Dockerfile
 run:
-  web: mvn spring-boot:run
+  web: env DATABASE_URL=$JDBC_DATABASE_URL java -jar target/java-getting-started-1.0.jar 
